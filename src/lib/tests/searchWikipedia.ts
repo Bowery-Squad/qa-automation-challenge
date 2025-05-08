@@ -4,10 +4,9 @@ import { Page, expect } from '@playwright/test';
 
 /**
  * 1. Go to wikipedia.org
- * 2. Search “artificial”
- * 3. Click “Artificial intelligence”
- * 4. Click “View history”
- * 5. Assert the most recent edit was made by *username*
+ * 2. Go to the “Artificial intelligence” page
+ * 3. Click “View history”
+ * 4. Assert the most recent edit was made by *username*
  */
 
 export async function run(page: Page, params: {}) {
@@ -16,18 +15,14 @@ export async function run(page: Page, params: {}) {
 
     // 1
     await page.goto('https://www.wikipedia.org/');
-
+ 
+    
     // 2
-    await searchInput.fill('artificial');
-        
+
+
     // 3
-    const artificialIntelligenceLink = page.getByRole('link', {
-        name: 'Artificial intelligence',
-    });
-    await artificialIntelligenceLink.click();;
 
-    // 4. 
 
-    // 5.
+    // 4.
 
 }
